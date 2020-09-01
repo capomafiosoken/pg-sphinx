@@ -44,10 +44,10 @@ static SPH_BOOL ensure_sphinx_is_connected(sphinx_config *config, char **error)
   return SPH_TRUE;
 }
 
-static void string_builder_append_int(StringBuilder *sb, int val)
+static void string_builder_append_int(StringBuilder *sb, long long val)
 {
   string_builder_reserve(sb, 40);
-  sb->len += snprintf(sb->str + sb->len, 40, "%d", val);
+  sb->len += snprintf(sb->str + sb->len, 40, "%llu", val);
 }
 
 static void string_builder_append_sql_string(StringBuilder *sb, const PString *str)
@@ -156,7 +156,7 @@ void sphinx_context_free(sphinx_context ctx)
 
 void sphinx_replace(sphinx_config *config,
                     const PString *index,
-                    int id,
+                    long long id,
                     const Dict *data,
                     char **error)
 {

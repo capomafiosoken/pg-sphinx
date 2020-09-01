@@ -14,7 +14,7 @@ LANGUAGE C IMMUTABLE;
 
 CREATE OR REPLACE FUNCTION sphinx_replace(
   /*index*/     varchar,
-  /*id*/        int,
+  /*id*/        bigint,
   /*data*/      varchar[])
 RETURNS VOID
 AS 'sphinx', 'pg_sphinx_replace'

@@ -36,7 +36,7 @@ void sphinx_context_free(sphinx_context ctx);
 
 void sphinx_replace(sphinx_config *config,
                     const PString *index,
-                    int id,
+                    long long id,
                     const Dict *data,
                     char **error);
 

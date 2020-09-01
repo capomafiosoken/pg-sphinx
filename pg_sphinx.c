@@ -223,7 +223,7 @@ static int array_to_dict(ArrayType *input, Dict *dict)
 Datum pg_sphinx_replace(PG_FUNCTION_ARGS)
 {
   PString index = {0, 0};
-  int id;
+  long long id;
   ArrayType *input;
   char *error = NULL;
   sphinx_config config;
@@ -233,7 +233,7 @@ Datum pg_sphinx_replace(PG_FUNCTION_ARGS)
     PG_RETURN_VOID();
 
   TO_PSTRING(index, PG_GETARG_DATUM(0), 0);
-  id = PG_GETARG_UINT32(1);
+  id = PG_GETARG_UINT64(1);
   input = PG_GETARG_ARRAYTYPE_P(2);
 
   if (array_to_dict(input, &data))
