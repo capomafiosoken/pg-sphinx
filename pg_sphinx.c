@@ -17,7 +17,7 @@
 #ifdef PG_MODULE_MAGIC
 PG_MODULE_MAGIC;
 #endif
-
+#define PG_GETARG_UINT64(n) DatumGetUInt64(PG_GETARG_DATUM(n))
 PG_FUNCTION_INFO_V1(pg_sphinx_select);
 Datum pg_sphinx_select(PG_FUNCTION_ARGS);
 
