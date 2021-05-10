@@ -6,4 +6,4 @@
 .libs
 *.deb
 /results
-
+.idea
